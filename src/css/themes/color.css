@@ -1,0 +1,11 @@
+﻿:root{
+--paper:#f4f1ea;
+  --paper-2:#eceae2;
+  --ink:#181613;
+  --ink-soft:#4e4a44;
+  --mid:#6b665e;
+  --accent:#a9613f;
+  --accent-deep:#8a4a2d;
+  --line:rgba(40,36,30,0.12);
+  --line-soft:rgba(40,36,30,0.07);
+}
