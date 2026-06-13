@@ -1,5 +1,20 @@
-﻿function addToCalendar(){
-const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de \u00c1ngela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
+﻿function copyAccount(){
+const txt=[
+'Angela Vargas',
+'18622257-1',
+'ANGE.VARGAST853@GMAIL.COM',
+'Banco Falabella',
+'Cuenta Corriente',
+'1-980-362444-7',
+].join('\n');
+navigator.clipboard.writeText(txt).then(()=>{
+const s=document.querySelector('[onclick="copyAccount()"] span');
+s.textContent='¡Copiado!';
+setTimeout(()=>s.textContent='Copiar número de cuenta',2200);
+});
+}
+function addToCalendar(){
+const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de Angela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
 const blob=new Blob([ics],{type:"text/calendar;charset=utf-8"});
 const url=URL.createObjectURL(blob);
 const a=document.createElement("a");a.href=url;a.download="Boda-Angela-Alvaro.ics";

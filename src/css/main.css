@@ -243,7 +243,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
 
 
 /* calendar button */
-.det-cal{margin-top:2.6rem;display:flex;justify-content:center}
+.det-cal{margin-top:2.6rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 .cal-btn{
   display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;
   padding:.85rem 2.2rem;background:transparent;color:var(--ink);
@@ -251,6 +251,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
   font-family:'Jost',sans-serif;font-weight:300;
   font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
   transition:border-color .35s,color .35s;
+  text-decoration:none;
 }
 .cal-btn svg{color:var(--accent);transition:color .35s}
 .cal-btn:hover{border-color:var(--accent);color:var(--accent)}
