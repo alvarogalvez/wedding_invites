@@ -7,11 +7,17 @@ const txt=[
 'Cuenta Corriente',
 '1-980-362444-7',
 ].join('\n');
-navigator.clipboard.writeText(txt).then(()=>{
 const s=document.querySelector('[onclick="copyAccount()"] span');
-s.textContent='¡Copiado!';
-setTimeout(()=>s.textContent='Copiar número de cuenta',2200);
-});
+function ok(){if(s){s.textContent='¡Copiado!';setTimeout(()=>s.textContent='Copiar número de cuenta',2200)}}
+function fail(){if(s){s.textContent='Error al copiar';setTimeout(()=>s.textContent='Copiar número de cuenta',2200)}}
+function fallback(){
+const ta=document.createElement('textarea');
+ta.value=txt;ta.style.cssText='position:fixed;opacity:0;pointer-events:none;top:0;left:0';
+document.body.appendChild(ta);ta.focus();ta.select();
+try{document.execCommand('copy')?ok():fail()}catch(e){fail()}
+document.body.removeChild(ta);
+}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(ok).catch(fallback)}else{fallback()}
 }
 function addToCalendar(){
 const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de Angela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
