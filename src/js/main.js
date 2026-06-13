@@ -2,7 +2,7 @@
 const txt=[
 'Angela Vargas',
 '18622257-1',
-'ANGE.VARGAST853@GMAIL.COM',
+'ange.vargast853@gmail.com',
 'Banco Falabella',
 'Cuenta Corriente',
 '1-980-362444-7',

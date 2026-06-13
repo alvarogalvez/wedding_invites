@@ -266,7 +266,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
 
 
 /* calendar button */
-.det-cal{margin-top:2.6rem;display:flex;justify-content:center}
+.det-cal{margin-top:2.6rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 .cal-btn{
   display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;
   padding:.85rem 2.2rem;background:transparent;color:var(--ink);
@@ -274,6 +274,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
   font-family:'Jost',sans-serif;font-weight:300;
   font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
   transition:border-color .35s,color .35s;
+  text-decoration:none;
 }
 .cal-btn svg{color:var(--accent);transition:color .35s}
 .cal-btn:hover{border-color:var(--accent);color:var(--accent)}
@@ -289,7 +290,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
 <nav class="nav">
   <div class="nav-mono">A &amp; Á</div>
   <ul class="nav-links">
-    <li><a href="#fecha">Fecha</a></li>
+    <li><a href="#fecha">Cuenta Atrás</a></li>
     <li><a href="#evento">Evento</a></li>
     <li><a href="#regalos">Regalos</a></li>
     <li><a href="#rsvp">Confirmar</a></li>
@@ -360,9 +361,12 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
     <div class="det-grid">
       <div class="det rv"><b></b><p class="k">Fecha</p><p class="v">Sábado 2 de enero</p><p class="s">2027</p></div>
       <div class="det rv"><b></b><p class="k">Hora</p><p class="v">17:30 hrs</p><p class="s">Hasta las 02:00 del día siguiente</p></div>
-      <div class="det rv" style="grid-column:1/-1"><b></b><p class="k">Ubicación y cómo llegar</p><p class="v">KO Eventos — San José de Maipo</p><p class="s">Cam. Al Volcán 11815, El Manzano, San José de Maipo, Región Metropolitana<br>~50 km al sur de Santiago · Ruta G-25, camino al volcán · Estacionamiento disponible</p><a class="map" href="https://maps.google.com/?q=KO+Eventos+Camino+Al+Volcan+11815+El+Manzano+San+Jose+de+Maipo" target="_blank">Ver en mapa →</a></div>
+      <div class="det rv" style="grid-column:1/-1"><b></b><p class="k">Ubicación y cómo llegar</p><p class="v">KO Eventos — San José de Maipo</p><p class="s">Ruta G-25 Cam. Al Volcán 11815, El Manzano, San José de Maipo, RM<br>~50 km al sur de Santiago · Estacionamiento disponible</p><a class="map" href="https://maps.google.com/?q=KO+Eventos+Camino+Al+Volcan+11815+El+Manzano+San+Jose+de+Maipo" target="_blank">Ver en mapa →</a></div>
     </div>
-    <div class="det-cal rv"><button class="cal-btn" onclick="addToCalendar()"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="2.5" width="12" height="10.5" stroke="currentColor" stroke-width="1"/><path d="M1 5.5h12M4 1v2.5M10 1v2.5" stroke="currentColor" stroke-width="1"/></svg><span>Agregar al calendario</span></button></div>
+    <div class="det-cal rv">
+      <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Angela+%26+%C3%81lvaro&dates=20270102T173000/20270103T020000&ctz=America%2FSantiago&details=%C2%A1Nos+casamos%21+Te+esperamos+para+celebrar+juntos.+C%C3%B3digo+de+vestimenta%3A+Formal.&location=KO+Eventos%2C+Cam.+Al+Volc%C3%A1n+11815%2C+El+Manzano%2C+San+Jos%C3%A9+de+Maipo" target="_blank"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="2.5" width="12" height="10.5" stroke="currentColor" stroke-width="1"/><path d="M1 5.5h12M4 1v2.5M10 1v2.5" stroke="currentColor" stroke-width="1"/></svg><span>Google Calendar</span></a>
+      <button class="cal-btn" onclick="addToCalendar()"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="2.5" width="12" height="10.5" stroke="currentColor" stroke-width="1"/><path d="M1 5.5h12M4 1v2.5M10 1v2.5" stroke="currentColor" stroke-width="1"/></svg><span>Otros calendarios</span></button>
+    </div>
   </div>
 </section>
 
@@ -401,9 +405,10 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
         <div class="gf-divider"></div>
         <div><p class="k">RUT</p><p class="v">18.622.257-1</p></div>
         <div><p class="k">Banco</p><p class="v">Banco Falabella · Cuenta Corriente</p></div>
-        <div><p class="k">N° de cuenta</p><p class="v">1-980-362444-7</p></div>
+        <div><p class="k">N° de cuenta</p><p class="v" id="gf-acct">1-980-362444-7</p></div>
         <div><p class="k">Correo de confirmación</p><p class="v">ange.vargast853@gmail.com</p></div>
       </div>
+      <div class="det-cal"><button class="cal-btn" onclick="copyAccount()"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1"/><path d="M2 10V2h8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Copiar número de cuenta</span></button></div>
     </div>
   </div>
 </section>
@@ -433,11 +438,27 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
 <footer>
   <div class="foot-mono">Angela &amp; Álvaro</div>
   <div class="foot-date">02 · 01 · 2027 — San José de Maipo</div>
+  <div class="foot-note">(1) Angela es Angela y no Ángela, así que no es error ortográfico. (2) La entrada al recinto estará disponible solo hasta las 17:50 Hrs, una vez empezada la ceremonia serás juzgad@ por llegar tarde. (3)</Hr></div>
 </footer>
 
 <script>
+function copyAccount(){
+const txt=[
+'Angela Vargas',
+'18622257-1',
+'ANGE.VARGAST853@GMAIL.COM',
+'Banco Falabella',
+'Cuenta Corriente',
+'1-980-362444-7',
+].join('\n');
+navigator.clipboard.writeText(txt).then(()=>{
+const s=document.querySelector('[onclick="copyAccount()"] span');
+s.textContent='¡Copiado!';
+setTimeout(()=>s.textContent='Copiar número de cuenta',2200);
+});
+}
 function addToCalendar(){
-const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de \u00c1ngela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
+const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de Angela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
 const blob=new Blob([ics],{type:"text/calendar;charset=utf-8"});
 const url=URL.createObjectURL(blob);
 const a=document.createElement("a");a.href=url;a.download="Boda-Angela-Alvaro.ics";

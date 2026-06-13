@@ -236,6 +236,7 @@ section{position:relative;padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,5vw,4rem);
 footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid var(--line-soft)}
 .foot-mono{font-family:'Fraunces',serif;font-weight:300;font-size:1.6rem;letter-spacing:.08em;margin-bottom:.8rem}
 .foot-date{font-family:'Jost',sans-serif;font-weight:300;font-size:0.62rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--mid)}
+.foot-note{font-family:'Jost',sans-serif;font-weight:150;font-size:0.5rem;letter-spacing:0.4em;color:var(--mid)}
 
 /* mountain rule */
 .mtn{width:100%;line-height:0;display:block;overflow:hidden}

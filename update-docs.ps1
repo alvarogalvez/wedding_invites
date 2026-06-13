@@ -34,6 +34,5 @@ function Inline-Html($srcFile, $outFile) {
 }
 
 Inline-Html "color.html" "index.html"
-Inline-Html "bw.html"    "bw.html"
 
 Write-Host "`ndocs/ is ready for GitHub Pages."
