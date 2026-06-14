@@ -1,0 +1,27 @@
+:root {
+  --paper:      #203b57;
+  --paper-2:    #192e44;
+  --ink:        #ecdfc2;
+  --ink-soft:   #c9a84c;
+  --mid:        #8fa8bf;
+  --accent:     #c9933a;
+  --accent-deep:#a8762a;
+  --line:       rgba(201,147,58,0.22);
+  --line-soft:  rgba(201,147,58,0.10);
+}
+
+/* Nav: deshabilitar blend mode oscuro → letras doradas */
+.nav { mix-blend-mode: normal; }
+.nav-mono { color: var(--accent); }
+.nav-links a { color: var(--ink-soft); }
+.nav-links a:hover { color: var(--accent); opacity: 1; }
+
+/* Hero: resplandor dorado sutil en la base */
+.hero::before {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,147,58,0.14), transparent 60%),
+    repeating-linear-gradient(0deg, transparent, transparent 46px, rgba(240,223,194,0.025) 46px, rgba(240,223,194,0.025) 47px);
+}
+
+/* Scroll-cue: degradado dorado */
+.scroll-cue .ln { background: linear-gradient(var(--accent), transparent); }
