@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{
+﻿:root{
 --paper:#f4f1ea;
   --paper-2:#eceae2;
   --ink:#181613;
@@ -21,7 +21,7 @@
 }
 </style>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+﻿*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{
@@ -333,7 +333,7 @@ footer{padding:clamp(3rem,7vw,5rem) 2rem;text-align:center;border-top:1px solid 
     <div class="cd-head rv">
       <span class="sec-num">01</span>
       <span class="sec-label">La cuenta atrás</span>
-      <h2 class="sec-head">Faltan <em>poco</em> para el gran día</h2>
+      <h2 class="sec-head">Falta <em>poco</em> para el gran día</h2>
     </div>
     <div class="cd-grid rv">
       <div class="cd-item"><span class="cd-num" id="d">--</span><span class="cd-lab">días</span></div>
@@ -451,11 +451,17 @@ const txt=[
 'Cuenta Corriente',
 '1-980-362444-7',
 ].join('\n');
-navigator.clipboard.writeText(txt).then(()=>{
 const s=document.querySelector('[onclick="copyAccount()"] span');
-s.textContent='¡Copiado!';
-setTimeout(()=>s.textContent='Copiar número de cuenta',2200);
-});
+function ok(){if(s){s.textContent='¡Copiado!';setTimeout(()=>s.textContent='Copiar número de cuenta',2200)}}
+function fail(){if(s){s.textContent='Error al copiar';setTimeout(()=>s.textContent='Copiar número de cuenta',2200)}}
+function fallback(){
+const ta=document.createElement('textarea');
+ta.value=txt;ta.style.cssText='position:fixed;opacity:0;pointer-events:none;top:0;left:0';
+document.body.appendChild(ta);ta.focus();ta.select();
+try{document.execCommand('copy')?ok():fail()}catch(e){fail()}
+document.body.removeChild(ta);
+}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(ok).catch(fallback)}else{fallback()}
 }
 function addToCalendar(){
 const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Boda Angela Alvaro//ES","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:boda-angela-alvaro-2027@invitacion","DTSTAMP:20260101T000000Z","DTSTART:20270102T173000","DTEND:20270103T020000","SUMMARY:Boda de Angela & \u00c1lvaro","LOCATION:KO Eventos\, Cam. Al Volc\u00e1n 11815\, El Manzano\, San Jos\u00e9 de Maipo","DESCRIPTION:\u00a1Nos casamos! Te esperamos para celebrar juntos. C\u00f3digo de vestimenta: Formal.","END:VEVENT","END:VCALENDAR"].join("\r\n");
