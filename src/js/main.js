@@ -28,12 +28,13 @@ document.body.appendChild(a);a.click();document.body.removeChild(a);
 setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 const W=new Date('2027-01-02T17:30:00');
-function tick(){const x=W-new Date();if(x<=0){document.getElementById('d').textContent='00';return}
+const cdD=document.getElementById('d'),cdH=document.getElementById('h'),cdM=document.getElementById('m'),cdS=document.getElementById('s');
+function tick(){if(!cdD)return;const x=W-new Date();if(x<=0){cdD.textContent='00';return}
 const d=Math.floor(x/864e5),h=Math.floor(x%864e5/36e5),m=Math.floor(x%36e5/6e4),s=Math.floor(x%6e4/1e3);
-document.getElementById('d').textContent=String(d).padStart(2,'0');
-document.getElementById('h').textContent=String(h).padStart(2,'0');
-document.getElementById('m').textContent=String(m).padStart(2,'0');
-document.getElementById('s').textContent=String(s).padStart(2,'0');}
-tick();setInterval(tick,1000);
+cdD.textContent=String(d).padStart(2,'0');
+cdH.textContent=String(h).padStart(2,'0');
+cdM.textContent=String(m).padStart(2,'0');
+cdS.textContent=String(s).padStart(2,'0');}
+if(cdD){tick();setInterval(tick,1000);}
 const io=new IntersectionObserver(e=>{e.forEach((t,i)=>{if(t.isIntersecting){setTimeout(()=>t.target.classList.add('in'),i*90);io.unobserve(t.target)}})},{threshold:.14});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
