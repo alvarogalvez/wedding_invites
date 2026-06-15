@@ -6,9 +6,64 @@
 <title>Angela & Álvaro · Enero 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Great+Vibes&family=Monsieur+La+Doulaise&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/themes/blue-gold.css">
 <link rel="stylesheet" href="css/main.css">
+<style>
+  .hero-names { font-family: 'Monsieur La Doulaise'; font-weight: 400; letter-spacing: 0.02em; }
+  .hero-names .n { display: block; }
+
+  .floral-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 clamp(1.5rem,5vw,4rem);
+    color: var(--accent);
+    opacity: 0.7;
+  }
+  .floral-div::before,
+  .floral-div::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,147,58,0.4);
+    margin: 0 1.4rem;
+  }
+  .floral-div svg { flex-shrink: 0; }
+
+  /* Datos de transferencia en 2 columnas */
+  .gf-row { grid-template-columns: 1fr 1fr; }
+  .gf-row > div:last-child { grid-column: 1 / -1; }
+
+  /* Flores en vértices del marco del hero */
+  .hero-corners { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .hc {
+    position: absolute;
+    width: 30px; height: 30px;
+    color: rgba(201,147,58,0.9);
+    fill: currentColor;
+  }
+  .hc.tl { top:    calc(5rem - 15px);                     left:  calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.tr { top:    calc(5rem - 15px);                     right: calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.bl { bottom: calc(clamp(1rem,3vw,2rem) - 15px);     left:  calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.br { bottom: calc(clamp(1rem,3vw,2rem) - 15px);     right: calc(clamp(1rem,3vw,2rem) - 15px); }
+
+  /* Marco dorado prominente en el hero — doble filete */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 5rem;
+    left: clamp(1rem, 3vw, 2rem);
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: clamp(1rem, 3vw, 2rem);
+    border: 2px solid rgba(201,147,58,0.9);
+    box-shadow:
+      inset 0 0 0 6px var(--paper),
+      inset 0 0 0 7px rgba(201,147,58,0.5);
+    pointer-events: none;
+    z-index: 2;
+  }
+</style>
 </head>
 <body>
 
@@ -23,6 +78,12 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-corners" aria-hidden="true">
+    <svg class="hc tl" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc tr" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc bl" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc br" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+  </div>
   <div class="hero-grid">
     <div class="hero-kick">Nos casamos</div>
     <h1 class="hero-names">
@@ -37,6 +98,8 @@
     </div>
   </div>
 </header>
+<br>
+<div class="floral-div" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg></div>
 
 <!-- DETAILS -->
 <section id="evento" class="det-sec">
@@ -49,7 +112,7 @@
     <div class="det-grid">
       <div class="det rv"><b></b><p class="k">Fecha</p><p class="v">Sábado 2 de enero</p><p class="s">2027</p></div>
       <div class="det rv"><b></b><p class="k">Hora</p><p class="v">17:30 hrs</p><p class="s">Hasta las 02:00 del día siguiente</p></div>
-      <div class="det rv" style="grid-column:1/-1"><b></b><p class="k">Ubicación y cómo llegar</p><p class="v">KO Eventos — San José de Maipo</p><p class="s">Ruta G-25 Cam. Al Volcán 11815, El Manzano, San José de Maipo, RM<br>~50 km al sur de Santiago · Estacionamiento disponible</p><a class="map" href="https://maps.google.com/?q=KO+Eventos+Camino+Al+Volcan+11815+El+Manzano+San+Jose+de+Maipo" target="_blank">Ver en mapa →</a></div>
+      <div class="det rv" style="grid-column:1/-1"><b></b><p class="k">Ubicación y cómo llegar</p><p class="v">KO Eventos — San José de Maipo</p><p class="s">Cam. Al Volcán 11815, San José de Maipo, RM. &nbsp;<svg width="15" height="15" viewBox="0 0 15 15" style="display:inline-block;vertical-align:middle;margin-bottom:1px" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x=".75" y=".75" width="13.5" height="13.5" rx="2.5" stroke="currentColor" stroke-width="1"/><path d="M5.5 4.5v6M5.5 4.5h4M5.5 7.5h3M5.5 10.5h4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></p><a class="map" href="https://maps.google.com/?q=KO+Eventos+Camino+Al+Volcan+11815+El+Manzano+San+Jose+de+Maipo" target="_blank">Ver en mapa →</a></div>
     </div>
     <div class="det-cal rv">
       <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Angela+%26+%C3%81lvaro&dates=20270102T173000/20270103T020000&ctz=America%2FSantiago&details=%C2%A1Nos+casamos%21+Te+esperamos+para+celebrar+juntos.+C%C3%B3digo+de+vestimenta%3A+Formal.&location=KO+Eventos%2C+Cam.+Al+Volc%C3%A1n+11815%2C+El+Manzano%2C+San+Jos%C3%A9+de+Maipo" target="_blank"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="2.5" width="12" height="10.5" stroke="currentColor" stroke-width="1"/><path d="M1 5.5h12M4 1v2.5M10 1v2.5" stroke="currentColor" stroke-width="1"/></svg><span>Google Calendar</span></a>
@@ -57,6 +120,8 @@
     </div>
   </div>
 </section>
+
+<div class="floral-div" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg></div>
 
 <!-- DRESSCODE -->
 <section class="dc-sec">
@@ -70,6 +135,8 @@
   </div>
 </section>
 
+<div class="floral-div" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg></div>
+
 <!-- GIFTS -->
 <section id="regalos" class="gf-sec">
   <div class="gf">
@@ -80,8 +147,7 @@
     <p class="gf-note rv">Su presencia es el mejor regalo. Si desean tener un gesto con nosotros, pueden hacer un aporte por transferencia.</p>
     <div class="gf-card rv">
       <div class="gf-row">
-        <div><p class="k">Titular</p><p class="v big">Angela Vargas</p></div>
-        <div class="gf-divider"></div>
+        <div><p class="k">Titular</p><p class="v">Angela Vargas</p></div>
         <div><p class="k">RUT</p><p class="v">18.622.257-1</p></div>
         <div><p class="k">Banco</p><p class="v">Banco Falabella · Cuenta Corriente</p></div>
         <div><p class="k">N° de cuenta</p><p class="v" id="gf-acct">1-980-362444-7</p></div>
@@ -91,6 +157,8 @@
     </div>
   </div>
 </section>
+
+<div class="floral-div" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg></div>
 
 <!-- RSVP -->
 <section id="rsvp" class="rsvp">
