@@ -222,6 +222,7 @@ section{position:relative;padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,5vw,4rem);
 .rsvp-top{margin-bottom:1.8rem}
 .rsvp-intro{font-family:'Cormorant',serif;font-style:italic;font-size:1.2rem;line-height:1.7;color:var(--mid);margin-bottom:2.6rem}
 .rsvp-intro strong{font-style:normal;font-weight:400;color:var(--ink)}
+.rsvp-img{display:block;width:117px;height:auto;margin:0 auto 2.4rem}
 .rsvp-cta{
   display:inline-flex;align-items:center;gap:.9rem;
   padding:1.15rem 3.2rem;background:var(--ink);color:var(--paper);
