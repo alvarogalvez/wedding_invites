@@ -75,6 +75,19 @@
     }
   }
 
+  .hero-photo {
+    width: clamp(140px, 30vw, 200px);
+    height: clamp(140px, 30vw, 200px);
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 50%;
+    border: 2px solid rgba(201,147,58,0.7);
+    box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px rgba(201,147,58,0.3);
+    margin: 2rem 0 1.6rem;
+    opacity: 0;
+    animation: fu 1.2s 0.7s forwards;
+  }
+
   /* Marco dorado prominente en el hero — doble filete */
   .hero::after {
     content: '';
@@ -119,6 +132,7 @@
       <span class="hero-amp">&amp;</span>
       <span class="n n2">Álvaro</span>
     </h1>
+    <img class="hero-photo" src="assets/photos/foto%20cuernos%20del%20paine.png" alt="La propuesta · Torres del Paine">
     <div class="hero-meta">
       <span>2 Enero 2027</span><span class="dot"></span>
       <span>San José de Maipo</span><span class="dot"></span>
