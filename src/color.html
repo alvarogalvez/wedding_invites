@@ -3,12 +3,65 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Angela & Álvaro · Enero 2027</title>
+<title>Angela &amp; Álvaro · Enero 2027</title>
+<meta name="description" content="Angela & Álvaro se casan el 2 de enero de 2027 en San José de Maipo, Chile. ¡Confirma tu asistencia!"/>
+<meta name="theme-color" content="#f5f1ea"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Angela & Álvaro · Nos casamos"/>
+<meta property="og:description" content="2 de enero de 2027 · San José de Maipo, Chile. ¡Confirma tu asistencia!"/>
+<meta property="og:image" content="https://alvarogalvez.github.io/wedding_invites/assets/photos/ring.jpg"/>
+<meta property="og:locale" content="es_CL"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Monsieur+La+Doulaise&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/themes/color.css">
 <link rel="stylesheet" href="css/main.css">
+<style>
+  .hero-names { font-family: 'Monsieur La Doulaise'; font-weight: 400; letter-spacing: 0.02em; }
+  .hero-names .n { display: inline; }
+  .hero-amp { display: inline; margin: 0 0.2em; }
+
+  .hero-corners { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .hc { position: absolute; width: 30px; height: 30px; color: var(--accent); fill: currentColor; }
+  .hc.tl { top: calc(5rem - 15px); left: calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.tr { top: calc(5rem - 15px); right: calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.bl { bottom: calc(clamp(1rem,3vw,2rem) - 15px); left: calc(clamp(1rem,3vw,2rem) - 15px); }
+  .hc.br { bottom: calc(clamp(1rem,3vw,2rem) - 15px); right: calc(clamp(1rem,3vw,2rem) - 15px); }
+
+  .hero-photo {
+    width: clamp(140px, 30vw, 200px);
+    height: clamp(140px, 30vw, 200px);
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px rgba(0,0,0,0.12);
+    margin: 2rem 0 1.6rem;
+    opacity: 0;
+    animation: fu 1.2s 0.7s forwards;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 5rem;
+    left: clamp(1rem, 3vw, 2rem);
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--accent);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  @media (max-width: 680px) {
+    .nav { flex-direction: column; align-items: center; gap: 0.5rem; padding: 0.9rem clamp(1rem, 4vw, 2rem); }
+    .nav-links { display: flex; gap: 1.4rem; }
+    .nav-links a { font-size: 0.5rem; letter-spacing: 0.2em; }
+  }
+</style>
 </head>
 <body>
 
@@ -17,6 +70,7 @@
   <ul class="nav-links">
     <li><a href="#fecha">Cuenta Atrás</a></li>
     <li><a href="#evento">Evento</a></li>
+    <li><a href="#vestimenta">Vestimenta</a></li>
     <li><a href="#regalos">Regalos</a></li>
     <li><a href="#rsvp">Confirmar</a></li>
   </ul>
@@ -24,6 +78,12 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-corners" aria-hidden="true">
+    <svg class="hc tl" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc tr" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc bl" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+    <svg class="hc br" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g transform="translate(11,11)"><ellipse cx="0" cy="-5" rx="2" ry="4.2"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(60)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(120)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(180)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(240)"/><ellipse cx="0" cy="-5" rx="2" ry="4.2" transform="rotate(300)"/><circle r="2.4"/></g></svg>
+  </div>
   <div class="hero-grid">
     <div class="hero-kick">Nos casamos</div>
     <h1 class="hero-names">
@@ -31,6 +91,7 @@
       <span class="hero-amp">&amp;</span>
       <span class="n n2">Álvaro</span>
     </h1>
+    <img class="hero-photo" src="assets/photos/foto%20cuernos%20del%20paine.png" alt="La propuesta · Torres del Paine">
     <div class="hero-meta">
       <span>2 Enero 2027</span><span class="dot"></span>
       <span>San José de Maipo</span><span class="dot"></span>
@@ -102,14 +163,15 @@
 </figure>
 
 <!-- DRESSCODE -->
-<section class="dc-sec">
+<section id="vestimenta" class="dc-sec">
   <div class="dc">
     <div class="dc-top rv">
       <span class="sec-num">03</span>
-      <span class="sec-label">Vestimenta</span>
+      <span class="sec-label">Vestimenta Formal</span>
     </div>
-    <div class="dc-badge rv"><span class="dc-word">Formal</span></div>
-    <p class="dc-note rv">Les pedimos asistir con vestimenta de etiqueta.<br><strong>Ellas</strong> · vestido largo o de cocktail<br><strong>Ellos</strong> · traje oscuro o smoking</p>
+    <img class="dc-img rv" src="assets/photos/dress%20code%202.png" alt="Guía de colores de vestimenta">
+    <p class="dc-note rv"><strong>Ellas</strong> · Vestido largo o cocktail<br><strong>Ellos</strong> · Traje formal</p>
+    <p class="dc-note dc-warning rv">El blanco y otros tonos similares están reservados para la novia.</p>
   </div>
 </section>
 
@@ -123,7 +185,7 @@
       <span class="sec-num">04</span>
       <span class="sec-label">Lista de regalos</span>
     </div>
-    <p class="gf-note rv">Su presencia es el mejor regalo. Si desean tener un gesto con nosotros, pueden hacer un aporte por transferencia.</p>
+    <p class="gf-note rv">Tu presencia es el mejor regalo. Si deseas tener un gesto con nosotros, puedes hacer un aporte por transferencia.</p>
     <div class="gf-card rv">
       <div class="gf-row">
         <div><p class="k">Titular</p><p class="v big">Angela Vargas</p></div>
@@ -152,8 +214,13 @@
       <span class="sec-label">Confirmación</span>
       <h2 class="sec-head">¿Nos <em>acompañas</em>?</h2>
     </div>
-    <p class="rsvp-intro rv">Nos encantaría celebrar contigo. Por favor confirma tu asistencia completando el formulario.</p>
-    <a class="rsvp-cta rv" href="TU_LINK_DE_GOOGLE_FORMS_AQUI" target="_blank"><span>Confirmar asistencia</span></a>
+    <p class="rsvp-intro rv">Nos encantaría celebrar contigo. Por favor confirma en el formulario.</p>
+    <div class="rsvp-invite rv">
+      <p class="ri-label">Invitación <em>para</em></p>
+      <img class="rsvp-img" src="assets/photos/invite-single.png" alt="Invitación individual" width="117" height="112">
+      <p class="ri-label">Una Persona</p>
+    </div>
+    <a class="rsvp-cta rv" href="https://docs.google.com/forms/d/e/1FAIpQLSdsEGXX7S9tuBf0P4NfkS9ldhpQCO2ttPHqfYj9qzyNF2Ul8g/viewform?usp=dialog" target="_blank"><span>Confirmar asistencia</span></a>
     <p class="rsvp-deadline rv">Antes del 01 de diciembre de 2026</p>
   </div>
 </section>
@@ -164,7 +231,7 @@
   <div class="foot-mono">Angela &amp; Álvaro</div>
   <div class="foot-date">02 · 01 · 2027 — San José de Maipo</div>
   <br>
-  <div class="foot-note">(1) Angela es Angela y no Ángela, así que no es error ortográfico. (2) La entrada al recinto estará disponible solo hasta las 17:50 Hrs, una vez empezada la ceremonia serás juzgad@ por llegar tarde. (3)</Hr></div>
+  <div class="foot-note">(1) Angela es Angela y no Ángela, así que no es error ortográfico. (2) La entrada al recinto estará disponible solo hasta las 17:50 Hrs, una vez empezada la ceremonia serás juzgad@ por llegar tarde. (3) Dama: puede venir vestida formal, cocktail o gala, SÓLO EL COLOR BLANCO Y CREMA está prohibido.</div>
 </footer>
 
 <script src="js/main.js"></script>
