@@ -223,7 +223,15 @@ section{position:relative;padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,5vw,4rem);
   font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--ink);line-height:1.5;
 }
-.dc-svg{height:120px;width:auto;max-width:100%;display:block;margin-top:.2rem}
+.dc-svg{height:120px;width:auto;max-width:100%;display:block;margin-top:.2rem;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.dc-block:hover .dc-svg{transform:scale(1.08)}
+/* Móvil (sin hover): zoom Ken Burns lento y continuo, desfasado entre bloques */
+@keyframes kb-dc{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media(hover:none){
+  .dc-svg{animation:kb-dc 8s ease-in-out infinite alternate}
+  .dc-block:nth-child(2) .dc-svg{animation-delay:-2.7s}
+  .dc-block:nth-child(3) .dc-svg{animation-delay:-5.3s}
+}
 .dc-block .dc-note{margin:0;text-align:center;font-size:0.72rem;line-height:1.6}
 @media(max-width:560px){
   .dc-groups{flex-direction:column;align-items:center}
